@@ -21,7 +21,7 @@ If you use Keras + Theano: use `Capsule_TH` layer in `Capsule_Keras.py`
 You should use Keras >= 2.1.0
 
 
-## Some results
+## Some results (on MNIST)
 
 | System | Accuracy(%) | w/o conf | w/ conf |
 |------|:----:|:----:|:----:|
