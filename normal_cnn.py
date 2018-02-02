@@ -36,17 +36,16 @@ Y_test = Y_test[Y_test[:,0] != Y_test[:,1]]
 Y_test.sort(axis=1) #排一下序，因为只比较集合，不比较顺序
 
 
-
-#搭建CNN+Capsule分类模型
+#搭建普通CNN分类模型
 input_image = Input(shape=(None,None,1))
 cnn = Conv2D(64, (3, 3), activation='relu')(input_image)
 cnn = Conv2D(64, (3, 3), activation='relu')(cnn)
 cnn = AveragePooling2D((2,2))(cnn)
 cnn = Conv2D(128, (3, 3), activation='relu')(cnn)
 cnn = Conv2D(128, (3, 3), activation='relu')(cnn)
-cnn = Reshape((-1, 128))(cnn)
-capsule = Capsule_TH(10, 16, 3, True)(cnn)    #use Capsule_TF if you use tensorflow
-output = Lambda(lambda x: K.sqrt(K.sum(K.square(x), 2)))(capsule)
+cnn = GlobalAveragePooling2D()(cnn)
+dense = Dense(128, activation='relu')(cnn)
+output = Dense(10, activation='sigmoid')(dense)
 
 model = Model(inputs=input_image, outputs=output)
 model.compile(loss=lambda y_true,y_pred: y_true*K.relu(0.9-y_pred)**2 + 0.25*(1-y_true)*K.relu(y_pred-0.1)**2,
@@ -57,7 +56,7 @@ model.summary()
 
 model.fit(x_train, y_train,
           batch_size=batch_size,
-          epochs=10,
+          epochs=30,
           verbose=1,
           validation_data=(x_test, y_test))
 
@@ -67,7 +66,7 @@ Y_pred = Y_pred.argsort()[:,-2:] #取最高分数的两个类别
 Y_pred.sort(axis=1) #排序，因为只比较集合
 
 acc = 1.*(np.prod(Y_pred == Y_test, axis=1)).sum()/len(X_test)
-print u'CNN+Capsule, w/o confidence %s'%acc
+print u'CNN+Pooling, w/o confidence %s'%acc
 acc = 1.*(np.prod(Y_pred == Y_test, axis=1)*greater).sum()/len(X_test)
-print u'CNN+Capsule, w/ confidence %s'%acc
+print u'CNN+Pooling, w/ confidence %s'%acc
 
