@@ -25,12 +25,8 @@ You should use Keras >= 2.1.0
 
 | System | Accuracy(%) | w/o conf | w/ conf |
 |------|:----:|:----:|:----:|
-| Normal_CNN (theano)| 99.43% | 32.08% | 8.02% |
-| Normal_CNN (tensorflow)| 99.46% | 31.38% | 5.03% |
-
-
-| System | Accuracy(%) | w/o conf | w/ conf |
-|------|:----:|:----:|:----:|
+| Normal_CNN (Tensorflow)| 99.46% | 31.38% | 5.03% |
+| Normal_CNN (Theano)| 99.43% | 32.08% | 8.02% |
 | CapsNet (Tensorflow) - routings 3 | 99.43% | 95.96% | 95.82% |
 | CapsNet (Tensorflow) - routings 2 | 99.44% | 96.48% | 96.29% |
 | CapsNet (Tensorflow) - routings 1 | 99.52% | 97.43% | 97.32% |
