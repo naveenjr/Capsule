@@ -25,18 +25,8 @@ You should use Keras >= 2.1.0
 
 ## Some results (on MNIST)
 
-**TODO: average and standard deviation will be reported (5 runs).**
+**TODO: Average and standard deviation will be reported (5 runs).**
 
-| System | Accuracy(%) | w/o conf | w/ conf |
-|------|:----:|:----:|:----:|
-| Normal_CNN (Tensorflow)| 99.46%  | 31.38% | 5.03% |
-| Normal_CNN (Theano)| 99.43%  | 32.08% | 8.02% |
-| CapsNet (Tensorflow) - routings 3 | 99.43% | 95.96% | 95.82% |
-| CapsNet (Tensorflow) - routings 2 | 99.44% | 96.48% | 96.29% |
-| CapsNet (Tensorflow) - routings 1 | 99.52% | 97.43% | 97.32% |
-| CapsNet (Theano) - routings 3 | **99.62%** | 80.85% | 80.74% |
-| CapsNet (Theano) - routings 2 | 99.57% | 73.84% | 73.71% |
-| CapsNet (Theano) - routings 1 | 99.56% | 91.64% | 91.57% |
 
 
 -----------
