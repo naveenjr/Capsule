@@ -1,12 +1,14 @@
 # Capsule Implementation with Keras (Theano backend)
 
-Fixed a runtime error with Theano backend.
+(Probably) Fixed a `Runtime Error` with Theano backend.
 
 Also report some numbers with both original code and the fixed code.
 
 Note: There is no guarantee that the code is exactly what the original author thinks.
 
 Enjoy :)
+
+**Original source: https://github.com/bojone/Capsule**
 
 ## Note
 
