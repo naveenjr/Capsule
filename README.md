@@ -25,8 +25,20 @@ You should use Keras >= 2.1.0
 
 ## Some results (on MNIST)
 
-**TODO: Average and standard deviation will be reported (5 runs).**
+Average and standard deviation are calculated by 5 runs.
 
+@NVIDIA TESLA K40m
+
+| System | Accuracy | w/o conf | w/ conf |
+|------|:----:|:----:|:----:|
+| Normal_CNN (Tensorflow)| 99.46% (99.444±0.016) | 41.47% | 9.97% |
+| Normal_CNN (Theano)| 99.45% (99.416±0.026) | 44.83% | 6.94% |
+| CapsNet (Tensorflow) - routings 3 | 99.47% (99.438±0.024) | 95.96% | 95.82% |
+| CapsNet (Tensorflow) - routings 2 | 99.49% (99.470±0.021) | 96.48% | 96.29% |
+| CapsNet (Tensorflow) - routings 1 | 99.55% (99.524±0.016)| 97.43% | 97.32% |
+| CapsNet (Theano) - routings 3 | **99.62% (99.578±0.037)** | 91.68% | 91.46% |
+| CapsNet (Theano) - routings 2 | 99.61% (99.566±0.034) | 94.54% | 94.34% |
+| CapsNet (Theano) - routings 1 | 99.56% (99.534±0.028) | 91.64% | 91.57% |
 
 
 -----------
